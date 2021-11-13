@@ -64,6 +64,13 @@ mysqli_close($connect);
             font-size: 3vw;
         }
 
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #27496D;
+            text-align: center;
+            width: 100%;
+        }
         .manageProduct {
             margin: auto;
         }
