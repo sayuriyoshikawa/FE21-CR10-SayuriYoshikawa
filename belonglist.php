@@ -9,13 +9,11 @@ if ($_GET['id']) {
     $result = mysqli_query($connect, $sql);
     $data = mysqli_fetch_assoc($result);
     if (mysqli_num_rows($result) == 1) {
-     
+
         $publisher_name = $data["publisher_name"];
-       
     } else {
         header("location: error.php");
     }
- 
 } else {
     header("location: error.php");
 }
@@ -61,6 +59,11 @@ mysqli_close($connect);
     <title>Document</title>
 
     <style type="text/css">
+         .navbar-brand {
+            color: white;
+            font-size: 3vw;
+        }
+
         .manageProduct {
             margin: auto;
         }
@@ -69,8 +72,9 @@ mysqli_close($connect);
             width: 60px !important;
             height: 70px !important;
         }
+
         .home {
-            background-color:#00909E;
+            background-color: #00909E;
             color: white;
         }
 
@@ -78,20 +82,30 @@ mysqli_close($connect);
             text-align: center;
             vertical-align: middle;
         }
+
         .h2 {
             text-align: center;
         }
+
         tr {
             text-align: center;
         }
+
         .back {
-               background-color: #27496D;
-               color: white;
-           }
+            background-color: #27496D;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="index.php">Library stock system</a>
+
+        </div>
+        </div>
+    </nav>
     <div class="manageProduct w-75 mt-3">
         <div class='mb-3'>
 
@@ -116,7 +130,7 @@ mysqli_close($connect);
                 </tr>
             </thead>
             <tbody>
-              
+
                 <?php echo $tbody ?>
             </tbody>
         </table>

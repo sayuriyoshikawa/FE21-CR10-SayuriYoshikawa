@@ -38,65 +38,71 @@ if ($_GET['id']) {
     <title>Edit information</title>
     <?php require_once  'components/boot.php' ?>
     <style type="text/css">
-        .navbar-brand {
-            color: white;
-            font-size: 3vw;
-        }
+    .navbar-brand {
+        color: white;
+        font-size: calc(10px + 1.5vw);
+    }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            background-color: #27496D;
-            text-align: center;
-            width: 100%;
-        }
+    .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #27496D;
+        text-align: center;
+        width: 100%;
+    }
 
-        fieldset {
-            margin: auto;
-            width: 60%;
-        }
-        fieldset .h2 {
-            text-align: center;
-        }
-       
-        .image img {
-            width: 20vw;
-            min-width: 250px;
-           } 
-           .save {
-               background-color: #00909E;
-               color: white;
-           }
-           .back {
-               background-color: #27496D;
-               color: white;
-           }
+    fieldset {
+        margin: auto;
+        width: 60%;
+        min-width: 300px;
+    }
+
+    fieldset .h2 {
+        text-align: center;
+    }
+
+    .image img {
+        width: 20vw;
+        min-width: 250px;
+    }
+
+    .save {
+        background-color: #00909E;
+        color: white;
+    }
+
+    .back {
+        background-color: #27496D;
+        color: white;
+    }
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="index.php">Library stock system</a>
-            
+
         </div>
         </div>
     </nav>
     <fieldset class="mb-5 ">
         <legend class='h2 my-5'>Update request </legend>
         <div class="image">
-           <center><img class="mediaImage"  src='pictures/<?php echo $picture ?>' alt= "<?php echo $title ?>"> </center>
-            </div>
+            <center><img class="mediaImage" src='pictures/<?php echo $picture ?>' alt="<?php echo $title ?>"> </center>
+        </div>
 
         <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
             <table class='table'>
                 <tr>
                     <th>Title</th>
-                    <td><input class='form-control' type="text" name="title" placeholder="Title" value="<?php echo $title ?>" /></td>
+                    <td><input class='form-control' type="text" name="title" placeholder="Title"
+                            value="<?php echo $title ?>" /></td>
                 </tr>
                 <tr>
                     <th>ISBN code</th>
-                    <td><input class='form-control' type="text" name="ISBNcode" placeholder="ISBN code" value="<?php echo $ISBNcode ?>" /></td>
+                    <td><input class='form-control' type="text" name="ISBNcode" placeholder="ISBN code"
+                            value="<?php echo $ISBNcode ?>" /></td>
                 </tr>
 
                 <tr>
@@ -125,29 +131,37 @@ if ($_GET['id']) {
                 </tr>
                 <tr>
                     <th>Author name</th>
-                    <td><input type="text" class="form-control" type="text" name="author_first_name" placeholder="First name" aria-label="First name" value="<?php echo $author_first_name ?>" /></td>
+                    <td><input type="text" class="form-control" type="text" name="author_first_name"
+                            placeholder="First name" aria-label="First name" value="<?php echo $author_first_name ?>" />
+                    </td>
                 </tr>
                 <tr>
                     </th>
                     <th>
-                    <td><input type="text" class="form-control" type="text" name="author_last_name" placeholder="Last name" aria-label="Last name" value="<?php echo $author_last_name ?>" /></td>
+                    <td><input type="text" class="form-control" type="text" name="author_last_name"
+                            placeholder="Last name" aria-label="Last name" value="<?php echo $author_last_name ?>" />
+                    </td>
 
                 </tr>
                 <tr>
                     <th>Publiser name</th>
-                    <td><input class='form-control' type="text" name="publisher_name" placeholder="publisher" value="<?php echo $publisher_name ?>" /></td>
+                    <td><input class='form-control' type="text" name="publisher_name" placeholder="publisher"
+                            value="<?php echo $publisher_name ?>" /></td>
                 </tr>
                 <tr>
                     <th>publisher Adress</th>
-                    <td><input class='form-control' type="text" name="publisher_address" placeholder="Publiser adress" value="<?php echo $publisher_address ?>" /></td>
+                    <td><input class='form-control' type="text" name="publisher_address" placeholder="Publiser adress"
+                            value="<?php echo $publisher_address ?>" /></td>
                 </tr>
                 <tr>
                     <th>publish Date</th>
-                    <td><input class='form-control' type="date" name="publish_date" placeholder="Publish date" value="<?php echo $publish_date ?>" /></td>
+                    <td><input class='form-control' type="date" name="publish_date" placeholder="Publish date"
+                            value="<?php echo $publish_date ?>" /></td>
                 </tr>
                 <tr>
                     <th>Description</th>
-                    <td><textarea class="form-control" type="text" name="short_description" placeholder="Description" rows="3"><?php echo $short_description ?></textarea>
+                    <td><textarea class="form-control" type="text" name="short_description" placeholder="Description"
+                            rows="3"><?php echo $short_description ?></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -176,11 +190,12 @@ if ($_GET['id']) {
 
             </table>
             <div class="mt-3 ">
-            <input type="hidden" name="id" value="<?php echo $data['id'] ?>" />                                       
-            <input type="hidden" name="picture" value="<?php echo $data['picture'] ?>" />
-            <center><button class="btn save mb-4" type="submit">Save Changes</button><center>
-            <a href="index.php"><button class="btn back" type="button">Back</button></a>
-        </div>
+                <input type="hidden" name="id" value="<?php echo $data['id'] ?>" />
+                <input type="hidden" name="picture" value="<?php echo $data['picture'] ?>" />
+                <center><button class="btn save mb-4" type="submit">Save Changes</button>
+                    <center>
+                        <a href="index.php"><button class="btn back" type="button">Back</button></a>
+            </div>
 
         </form>
     </fieldset>

@@ -34,48 +34,50 @@ mysqli_close($connect);
     <title>Publisher list</title>
 
     <style>
-         .navbar-brand {
-            color: white;
-            font-size: 3vw;
-        }
+    .navbar-brand {
+        color: white;
+        font-size: calc(10px + 1.5vw);
+    }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            background-color: #27496D;
-            text-align: center;
-            width: 100%;
-        }
-        .list {
-            width: 60%;
-            min-width: 300px;
-            margin: auto;
-        }
-        .list h1 {
-            text-align: center;
-        }
-        .back {
-               background-color: #27496D;
-               color: white;
-           }
+    .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #27496D;
+        text-align: center;
+        width: 100%;
+    }
 
+    .list {
+        width: 60%;
+        min-width: 300px;
+        margin: auto;
+    }
+
+    .list h1 {
+        text-align: center;
+    }
+
+    .back {
+        background-color: #27496D;
+        color: white;
+    }
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="index.php">Library stock system</a>
-            
+
         </div>
         </div>
     </nav>
     <div class="list">
-    <h1 class="m-5">Publisher list</h1>
-    <ul class="list-group list-group-flush ">
-        <?= $tbody; ?>
-    </ul>
-    <a href="index.php"><button class="btn back mt-4" type="button">Back</button></a>
+        <h1 class="m-5">Publisher list</h1>
+        <ul class="list-group list-group-flush ">
+            <?= $tbody; ?>
+        </ul>
+        <a href="index.php"><button class="btn back mt-4" type="button">Back</button></a>
     </div>
 
 </body>

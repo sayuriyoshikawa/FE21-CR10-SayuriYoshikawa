@@ -30,66 +30,76 @@ if($_GET['id']) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail information</title>
     <?php require_once  'components/boot.php'?>
-    <style  type= "text/css">
-        .navbar-brand {
-            color: white;
-            font-size: 3vw;
-        }
+    <style type="text/css">
+    .navbar-brand {
+        color: white;
+        font-size: calc(10px + 1.5vw);
+    }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            background-color: #27496D;
-            text-align: center;
-            width: 100%;
-        }
+    .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #27496D;
+        text-align: center;
+        width: 100%;
+    }
 
-           fieldset  {
-               margin: auto;
-               margin-top : 3vw;
-               width: 60% ;
-           }  
-           fieldset .h2 {
-               text-align: center;
-           }
-           .image img {
-            width: 30vw;
-            min-width: 250px;
-           } 
-           form {
-               width: 40vw;
-               margin:auto;
-           }
-           table td {
-            word-break : break-all;
-           }
-           .back {
-               background-color: #00909E;
-               color: white;
-           }
-        </style>
+    fieldset {
+        margin: auto;
+        margin-top: 3vw;
+        width: 60%;
+        min-width: 300px;
+    }
+
+    fieldset .h2 {
+        text-align: center;
+    }
+
+    .image img {
+        width: 30vw;
+        min-width: 250px;
+    }
+
+    form {
+        width: 40vw;
+        min-width: 300px;
+        overflow: scroll;
+        margin: auto;
+    }
+
+    table td {
+        word-break: break-all;
+    }
+
+    .back {
+        background-color: #00909E;
+        color: white;
+    }
+    </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="index.php">Library stock system</a>
-            
+
         </div>
         </div>
     </nav>
-<fieldset>
-           <legend  class='h2 mb-5'>Detail imformation</legend>
-           <div class="image">
-           <center><img class="mediaImage"  src='pictures/<?php echo $picture ?>' alt= "<?php echo $title ?>"> </center>
-            </div>
+    <fieldset>
+        <legend class='h2 mb-5'>Detail imformation</legend>
+        <div class="image">
+            <center><img class="mediaImage" src='pictures/<?php echo $picture ?>' alt="<?php echo $title ?>"> </center>
+        </div>
 
-           <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
+        <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
             <table class='table '>
                 <tr>
                     <th>Title</th>
@@ -99,7 +109,7 @@ if($_GET['id']) {
                     <th>ISBN code</th>
                     <td><?php echo $ISBNcode ?></td>
                 </tr>
-                
+
                 <tr>
                     <div class="form-check form-check-inline">
                         <th>Type</th>
@@ -124,22 +134,23 @@ if($_GET['id']) {
                 </tr>
                 <tr class="description">
                     <th>Short Description</th>
-                    <td ><?php echo $short_description ?>
+                    <td><?php echo $short_description ?>
                     </td>
                 </tr>
                 <tr>
-                <th>Status</th>
+                    <th>Status</th>
                     <td><?php echo $status ?>
                     </td>
                 </tr>
                 <tr>
-                        <input   type = "hidden"   name = "id"   value = "<?php echo $data['id'] ?>" />
-                        <input type = "hidden" name= "picture" value = "<?php echo $data['picture'] ?>" />
-                    </tr>
-               </table>
-               <center><a href= "index.php"><button class="btn back my-4" type ="button">Back</button></a></center>
-           </form>
-       </fieldset>
-    
+                    <input type="hidden" name="id" value="<?php echo $data['id'] ?>" />
+                    <input type="hidden" name="picture" value="<?php echo $data['picture'] ?>" />
+                </tr>
+            </table>
+            <center><a href="index.php"><button class="btn back my-4" type="button">Back</button></a></center>
+        </form>
+    </fieldset>
+
 </body>
+
 </html>

@@ -40,58 +40,58 @@ mysqli_close($connect);
     <title>Library</title>
     <?php require_once 'components/boot.php' ?>
     <style type="text/css">
+    .navbar-brand {
+        color: white;
+        font-size: calc(10px + 1.5vw);
+    }
 
-        .navbar-brand {
-            color: white;
-            font-size: 3vw;
-        }
+    .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #27496D;
+        text-align: center;
+        width: 100%;
+    }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            background-color: #27496D;
-            text-align: center;
-            width: 100%;
-        }
+    nav .btn {
+        background-color: #F1F6F9;
+    }
 
-        nav .btn {
-            background-color: #F1F6F9;
-        }
-        .navbar-nav button:hover {
-            background-color: #BBBFCA;
-        }
+    .navbar-nav button:hover {
+        background-color: #BBBFCA;
+    }
 
-        .navbar-collapse {
-            justify-content: end;
-        }
+    .navbar-collapse {
+        justify-content: end;
+    }
 
-        .btn {
-            border: 1px solid #27496D;
-        }
+    .btn {
+        border: 1px solid #27496D;
+    }
 
-        .manageProduct {
-            
-            margin: auto;
-            margin-top: 5vw;
-            width: 85vw;
-            min-width: 300px;
-            overflow-x: scroll;
-        }
+    .manageProduct {
 
-        .img-thumbnail {
-            width: 60px !important;
-            height: 70px !important;
-        }
+        margin: auto;
+        margin-top: 5vw;
+        width: 85vw;
+        min-width: 300px;
+        overflow-x: scroll;
+    }
 
-        td {
-            text-align: center;
-            vertical-align: middle;
+    .img-thumbnail {
+        width: 60px !important;
+        height: 70px !important;
+    }
 
-        }
+    td {
+        text-align: center;
+        vertical-align: middle;
 
-        tr {
-            text-align: center;
-        }
+    }
+
+    tr {
+        text-align: center;
+    }
     </style>
 </head>
 
@@ -99,14 +99,16 @@ mysqli_close($connect);
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="index.php">Library stock system</a>
-        
-            <div  id="navbarNav">
+
+            <div id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="insert.php"><button class='btn' type="button">Insert media</button></a>
+                        <a class="nav-link" href="insert.php"><button class='btn' type="button">Insert
+                                media</button></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="publisherlist.php"><button class='btn' type="button">Publisher list</button></a>
+                        <a class="nav-link" href="publisherlist.php"><button class='btn' type="button">Publisher
+                                list</button></a>
                     </li>
             </div>
         </div>
