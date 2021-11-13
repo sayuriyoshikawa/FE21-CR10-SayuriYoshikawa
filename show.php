@@ -37,23 +37,60 @@ if($_GET['id']) {
     <title>Detail information</title>
     <?php require_once  'components/boot.php'?>
     <style  type= "text/css">
+        .navbar-brand {
+            color: white;
+            font-size: 3vw;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #27496D;
+            text-align: center;
+            width: 100%;
+        }
+
            fieldset  {
                margin: auto;
                margin-top : 3vw;
-               width: 60%  ;
+               width: 60% ;
            }  
-           .mediaImage{
-               width: 50vw;
-           }    
+           fieldset .h2 {
+               text-align: center;
+           }
+           .image img {
+            width: 30vw;
+            min-width: 250px;
+           } 
+           form {
+               width: 40vw;
+               margin:auto;
+           }
+           table td {
+            word-break : break-all;
+           }
+           .back {
+               background-color: #00909E;
+               color: white;
+           }
         </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="index.php">Library stock system</a>
+            
+        </div>
+        </div>
+    </nav>
 <fieldset>
-           <legend  class='h2'>Detail imformation</legend>
-           <img class="mediaImage"  src='pictures/<?php echo $picture ?>' alt= "<?php echo $title ?>">
+           <legend  class='h2 mb-5'>Detail imformation</legend>
+           <div class="image">
+           <center><img class="mediaImage"  src='pictures/<?php echo $picture ?>' alt= "<?php echo $title ?>"> </center>
+            </div>
 
            <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
-            <table class='table'>
+            <table class='table '>
                 <tr>
                     <th>Title</th>
                     <td><?php echo $title ?></td>
@@ -85,9 +122,9 @@ if($_GET['id']) {
                     <th>publish Date</th>
                     <td><?php echo $publish_date ?></td>
                 </tr>
-                <tr>
-                    <th>Description</th>
-                    <td><?php echo $short_description ?>
+                <tr class="description">
+                    <th>Short Description</th>
+                    <td ><?php echo $short_description ?>
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +137,7 @@ if($_GET['id']) {
                         <input type = "hidden" name= "picture" value = "<?php echo $data['picture'] ?>" />
                     </tr>
                </table>
-               <a href= "index.php"><button class="btn btn-warning" type ="button">Back</button></a>
+               <center><a href= "index.php"><button class="btn back my-4" type ="button">Back</button></a></center>
            </form>
        </fieldset>
     

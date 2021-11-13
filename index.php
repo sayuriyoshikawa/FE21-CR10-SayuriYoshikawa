@@ -16,11 +16,11 @@ if (mysqli_num_rows($result)  > 0) {
            <td>" . $row['publish_date'] . "</td>
            <td>
            <a href='show.php?id=" . $row['id'] . "'>
-           <button class='btn btn-success btn-sm' type='button'>Show media</button></a>
+           <button class='btn btn-success btn-sm border-0' type='button'>Show media</button></a>
            <a href='update.php?id=" . $row['id'] . "'>
-           <button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+           <button class='btn btn-primary btn-sm border-0' type='button'>Edit</button></a>
            <a href='delete.php?id="  . $row['id'] . "'>
-           <button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+           <button class='btn btn-danger btn-sm border-0' type='button'>Delete</button></a></td>
 
             </tr>";
     };
@@ -40,12 +40,46 @@ mysqli_close($connect);
     <title>Library</title>
     <?php require_once 'components/boot.php' ?>
     <style type="text/css">
+
+        .navbar-brand {
+            color: white;
+            font-size: 3vw;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #27496D;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav .btn {
+            background-color: #F1F6F9;
+        }
+        .navbar-nav button:hover {
+            background-color: #BBBFCA;
+        }
+
+        .navbar-collapse {
+            justify-content: end;
+        }
+
+        .btn {
+            border: 1px solid #27496D;
+        }
+
         .manageProduct {
+            
             margin: auto;
+            margin-top: 5vw;
+            width: 80vw;
+            min-width: 300px;
+            overflow-x: scroll;
         }
 
         .img-thumbnail {
-            width: 70px !important;
+            width: 60px !important;
             height: 70px !important;
         }
 
@@ -62,15 +96,31 @@ mysqli_close($connect);
 </head>
 
 <body>
-    <div class="manageProduct w-75 mt-3">
-        <div class='mb-3'>
-
-            <a href="insert.php"><button class='btn btn-primary' type="button">Insert media</button></a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="index.php">Library stock system</a>
+        
+            <div  id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="insert.php"><button class='btn' type="button">Insert media</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publisherlist.php"><button class='btn' type="button">Publisher list</button></a>
+                    </li>
+            </div>
         </div>
-        <p class='h2'>Library</p>
+        </div>
+    </nav>
+
+
+
+
+    <div class="manageProduct">
+
 
         <table class='table table-striped table-bordered'>
-            <thead class='table-success'>
+            <thead class='table-primary'>
                 <tr>
 
                     <th>Picture</th>
