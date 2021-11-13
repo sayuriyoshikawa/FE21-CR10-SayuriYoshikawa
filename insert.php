@@ -29,7 +29,7 @@
 
     form {
         min-width: 300px;
-        overflow: scroll;
+        overflow-x: scroll;
     }
 
     .h2 {

@@ -70,7 +70,7 @@ if($_GET['id']) {
     form {
         width: 40vw;
         min-width: 300px;
-        overflow: scroll;
+        overflow-x: scroll;
         margin: auto;
     }
 
