@@ -73,7 +73,7 @@ mysqli_close($connect);
             
             margin: auto;
             margin-top: 5vw;
-            width: 80vw;
+            width: 85vw;
             min-width: 300px;
             overflow-x: scroll;
         }

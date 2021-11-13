@@ -84,6 +84,10 @@ mysqli_close($connect);
         tr {
             text-align: center;
         }
+        .back {
+               background-color: #27496D;
+               color: white;
+           }
     </style>
 </head>
 
@@ -92,7 +96,7 @@ mysqli_close($connect);
         <div class='mb-3'>
 
             <a href="index.php"><button class='btn home' type="button">Home</button></a>
-
+            <a href="index.php"><button class="btn back" type="button">Back</button></a>
         </div>
 
         <p class='h2 mb-5'>Media list published by :<br> <?php echo $publisher_name ?></p>

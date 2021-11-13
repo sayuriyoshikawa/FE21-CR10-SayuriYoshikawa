@@ -54,7 +54,10 @@ mysqli_close($connect);
         .list h1 {
             text-align: center;
         }
-
+        .back {
+               background-color: #27496D;
+               color: white;
+           }
 
     </style>
 </head>
@@ -72,7 +75,9 @@ mysqli_close($connect);
     <ul class="list-group list-group-flush ">
         <?= $tbody; ?>
     </ul>
+    <a href="index.php"><button class="btn back mt-4" type="button">Back</button></a>
     </div>
+
 </body>
 
 </html>
